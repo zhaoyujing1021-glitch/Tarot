@@ -50,4 +50,21 @@ graph TD
     START -->|4: カード一覧| MODE4[4: カード一覧]
     START -->|5: 終了| END[プログラム終了]
 
-    MODE1 --> Guidance1[Guidance / 心で念じる
+    MODE1 --> Guidance1[Guidance / 心で念じる]
+    Guidance1 --> Output1[output / カード表示 & 結果判断]
+    Output1 --> LoopCheck[loop / 継続確認]
+
+    MODE2 --> Guidance2[Guidance / 心で念じる]
+    Guidance2 --> Output2[output / カード表示 & 意味表示]
+    Output2 --> LoopCheck
+
+    MODE3 --> Guidance3[Guidance / 心で念じる]
+    Guidance3 --> Output3[output / 3枚表示 & 過去・現在・将来]
+    Output3 --> LoopCheck
+
+    MODE4 --> View1[view1 / カード名一覧表示]
+    View1 --> View2[view2 / 詳細カード番号入力 & 表示]
+    View2 --> LoopCheck
+
+    LoopCheck -->|1: メニューに戻る| START
+    LoopCheck -->|2: 終了| END

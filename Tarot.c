@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>//ランダム関数使う
 #include <string.h>//カード一覧に使うー(正/逆)を消す
+#include <time.h>
 
 void start();//最初の画面
 void Guidance();//各テストの定型文
@@ -72,13 +73,14 @@ struct TARTOR card[44] = {
 
 //mainプログラム
 int main(void){
+    srand((unsigned int)time(NULL));
     while (1){
         start(); //最初の画面
         if(scanf("%d",&w)!=1){
-            while (getchar() != '\n');{//数字以外入力NG
-                printf("-----------数字を入力してください----------\n");
-                continue;
+            while (getchar() != '\n') {
             }
+            printf("-----------数字を入力してください----------\n");
+            continue;
         }  
         switch (w){
             case 1:
@@ -260,7 +262,7 @@ void output(int a,int n){
 //カード名前一覧
 void view1(){
     printf("\n");
-    int j;
+    int j=0;
     for(int i=0;i<44;i++){
         if(i%2==0){
             printf("%d-",j++);

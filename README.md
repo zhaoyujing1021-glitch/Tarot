@@ -68,3 +68,8 @@ graph TD
 
     LoopCheck -->|1: メニューに戻る| START
     LoopCheck -->|2: 終了| END
+ ---
+
+2026年10月06日  
+
+ZHAO YUJING(チョウ　ユウキョウ) 
